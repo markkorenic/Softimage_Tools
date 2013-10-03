@@ -1,4 +1,6 @@
 Softimage_Tools
 ===============
 
-Rigging tools for XSI
+Python modular rig tools for XSI
+
+
