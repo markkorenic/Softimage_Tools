@@ -18,6 +18,6 @@ def searchAndReplace():
     
     if cancelled:
         return
-    #if there are objects selected, replace them with new string
+    #if there are objects selected, replace them with new string 
     if obj in xsi.Selection:
         obj.Name = obj.Name.replace( search, replace)
