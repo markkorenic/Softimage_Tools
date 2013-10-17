@@ -1,11 +1,11 @@
 from win32com.client import constants as c
 
-xsi=Application
-log = LogMessage
+xsi= Application
+log = xsi.LogMessage
 
 
 def searchAndReplace():
-#add ui
+    """UI for search and replace object strings"""
     prop = xsi.ActiveSceneRoot.AddProperty('CustomProperty',False, "SearchAndReplace" )
     #create search and replace textfields
     search_par = prop.AddParameter3("Search", c.siString)
@@ -15,8 +15,9 @@ def searchAndReplace():
     search  = search_par.Value
     replace = replace_par.Value
     xsi.DeleteObj(prop)
+    
     if cancelled:
         return
-
+    #if there are objects selected, replace them with new string
     if obj in xsi.Selection:
         obj.Name = obj.Name.replace( search, replace)
